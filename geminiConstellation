@@ -1,0 +1,307 @@
+"""
+program: pythonMidtermProject.py
+programmer's name: Abdullah Alazzani
+program purpose: This program draw the constellation pattern associated with the Gemini Sign
+Date: May 21, 2020
+"""
+
+import turtle
+import random
+from time import sleep
+
+area = turtle.Screen()
+area.setup(width=1.0 , height=1.0)
+turtle.speed(30)
+
+def main():
+  slidTime = 3
+  pageOne(slidTime)
+  pageTwo(slidTime)
+  pageThree(slidTime)
+  pageFour(slidTime)
+
+def pageOne(x):
+  turtle.bgcolor("black")
+  turtle.color("ivory")
+  turtle.penup()
+  turtle.hideturtle()
+  turtle.goto(0, 100)
+  turtle.write("Midterm Project", font=("Arial", 36, "italic"), align="center")
+  turtle.right(90)
+  turtle.forward(100)
+  turtle.write("The Gemini Constellation", font=("Arial", 36, "italic"), align="center")
+  turtle.forward(100)
+  turtle.write("Abdullah Alazzani", font=("Arial", 36, "italic"), align="center")
+  sleep(x)
+
+def pageTwo(x):
+  turtle.clearscreen()
+  turtle.pu()
+  turtle.setposition(0,100)
+  turtle.pd()
+  turtle.bgcolor("black")
+  turtle.bgpic(r"ezgif.com.gif")
+  turtle.update()
+  sleep(x)
+  turtle.clearscreen()
+
+#declearing the polt positions
+one_x = 270
+one_y = 44
+two_x = -266
+two_y = 82
+three_x = -220
+three_y = 169
+four_x = 121
+four_y = -143
+five_x = 174
+five_y = 7
+six_x = 60
+six_y = 44
+seven_x = -159
+seven_y = 76
+eight_x = 216
+eight_y = 18
+nine_x = 93
+nine_y = -244
+ten_x = -119
+ten_y = -48
+eleven_x = -254
+eleven_y = -6
+twelve_x = -95 
+twelve_y = -174
+thirteen_x = -19
+thirteen_y = 240
+fourteen_x = -31 
+fourteen_y = -73
+fifteen_x = -212
+fifteen_y = 53
+sixteen_x = 156
+sixteen_y = -47
+seventeen_x = -183 
+seventeen_y = 168
+eighteen_x = -95
+eighteen_y = 140
+
+def pageThree(x):
+  #drowing the polts and the names of the stars
+  turtle.penup()
+  turtle.hideturtle()
+  turtle.goto(one_x, one_y)
+  turtle.dot(20)
+  turtle.goto(two_x, two_y)
+  turtle.dot(20)
+  turtle.write('Much Wine')
+  turtle.goto(three_x, three_y)
+  turtle.dot(15)
+  turtle.write('Beaver')
+  turtle.goto(four_x, four_y)
+  turtle.dot(10)
+  turtle.write('Shining')
+  turtle.goto(five_x, five_y)
+  turtle.dot(10)
+  turtle.write('Back Foot')
+  turtle.goto(six_x, six_y)
+  turtle.dot(10)
+  turtle.goto(seven_x, seven_y)
+  turtle.dot()
+  turtle.write('Outstretched Paw')
+  turtle.goto(eight_x, eight_y)
+  turtle.dot()
+  turtle.write('Forward Foot')
+  turtle.goto(nine_x, nine_y)
+  turtle.dot(10)
+  turtle.goto(ten_x, ten_y)
+  turtle.dot()
+  turtle.write('The Button')
+  turtle.goto(eleven_x, eleven_y)
+  turtle.dot()
+  turtle.write('Middle of the Sky')
+  turtle.goto(twelve_x, twelve_y)
+  turtle.dot()
+  turtle.goto(thirteen_x, thirteen_y)
+  turtle.dot(10)
+  turtle.goto(fourteen_x, fourteen_y)
+  turtle.dot()
+  turtle.write('Pulled In Paw')
+  turtle.goto(fifteen_x, fifteen_y)
+  turtle.dot()
+  turtle.goto(sixteen_x, sixteen_y )
+  turtle.dot()
+  turtle.goto(seventeen_x, seventeen_y)
+  turtle.dot()
+  turtle.goto(eighteen_x, eighteen_y)
+  turtle.dot()
+
+  #drow lines between polts
+  turtle.goto(one_x, one_y)
+  turtle.pendown()
+  turtle.goto(eight_x, eight_y)
+  turtle.goto(five_x, five_y)
+  turtle.goto(six_x, six_y)
+  turtle.goto(eighteen_x, eighteen_y)
+  turtle.goto(seventeen_x, seventeen_y)
+  turtle.goto(three_x, three_y)
+  turtle.penup()
+  turtle.goto(sixteen_x, sixteen_y)
+  turtle.pendown()
+  turtle.goto(six_x, six_y)
+  turtle.penup()
+  turtle.goto(four_x, four_y)
+  turtle.pendown()
+  turtle.goto(fourteen_x, fourteen_y)
+  turtle.goto(ten_x, ten_y)
+  turtle.goto(fifteen_x, fifteen_y)
+  turtle.goto(two_x, two_y)
+  turtle.penup()
+  turtle.goto(nine_x, nine_y)
+  turtle.pendown()
+  turtle.goto(twelve_x, twelve_y)
+  turtle.goto(ten_x, ten_y)
+  turtle.penup()
+  turtle.goto(eleven_x, eleven_y)
+  turtle.pendown()
+  turtle.goto(fifteen_x, fifteen_y)
+  turtle.goto(seven_x, seven_y)
+  turtle.goto(eighteen_x, eighteen_y)
+  turtle.goto(thirteen_x, thirteen_y)
+  turtle.penup()
+  sleep(x)
+#___________________________________________________
+
+#a function for moving the turtle to a random location
+def moveToRandomLocation():
+  turtle.penup()
+  turtle.setpos(random.randint(-400,400) , random.randint(-400,400))
+  turtle.pendown()
+
+#a function for drawing a star of a particular size
+def drawStar(starSize, starColour):
+  turtle.color(starColour)
+  turtle.pendown()
+  turtle.begin_fill()
+  for side in range(5):
+ 		turtle.left(144)
+ 		turtle.forward(starSize)
+  turtle.end_fill()
+  turtle.penup()
+
+def drawGalaxy(numberOfStars):
+ 	starColours = ["#058396","#0275A6","#827E01"]
+ 	moveToRandomLocation()
+ 	#draw lots of small coloured stars
+ 	for star in range(numberOfStars):
+ 		turtle.penup()
+ 		turtle.left( random.randint(-180,180) )
+ 		turtle.forward( random.randint(5,20) )
+ 		turtle.pendown()
+ 		#draw a small star in a random colour
+ 		drawStar( 2, random.choice(starColours))
+
+
+def pageFour(x):
+  turtle.clearscreen()
+  turtle.hideturtle()
+
+  turtle.bgcolor("MidnightBlue")
+  turtle.color("yellow")
+
+  #turtle.speed(30)
+  #drowing the polts and the names of the stars
+  turtle.penup()
+  turtle.hideturtle()
+  turtle.goto(one_x, one_y)
+  drawStar(20, "yellow")
+  turtle.goto(two_x, two_y)
+  drawStar(20, "yellow")
+  turtle.write('Much Wine')
+  turtle.goto(three_x, three_y)
+  drawStar(15, "yellow")
+  turtle.write('Beaver')
+  turtle.goto(four_x, four_y)
+  drawStar(10, "yellow")
+  turtle.write('Shining')
+  turtle.goto(five_x, five_y)
+  drawStar(10, "yellow")
+  turtle.write('Back Foot')
+  turtle.goto(six_x, six_y)
+  drawStar(10, "yellow")
+  turtle.goto(seven_x, seven_y)
+  drawStar(5, "yellow")
+  turtle.write('Outstretched Paw')
+  turtle.goto(eight_x, eight_y)
+  drawStar(5, "yellow")
+  turtle.write('Forward Foot')
+  turtle.goto(nine_x, nine_y)
+  drawStar(10, "yellow")
+  turtle.goto(ten_x, ten_y)
+  drawStar(5, "yellow")
+  turtle.write('The Button')
+  turtle.goto(eleven_x, eleven_y)
+  drawStar(5, "yellow")
+  turtle.write('Middle of the Sky')
+  turtle.goto(twelve_x, twelve_y)
+  drawStar(5, "yellow")
+  turtle.goto(thirteen_x, thirteen_y)
+  drawStar(10, "yellow")
+  turtle.goto(fourteen_x, fourteen_y)
+  drawStar(5, "yellow")
+  turtle.write('Pulled In Paw')
+  turtle.goto(fifteen_x, fifteen_y)
+  drawStar(5, "yellow")
+  turtle.goto(sixteen_x, sixteen_y )
+  drawStar(5, "yellow")
+  turtle.goto(seventeen_x, seventeen_y)
+  drawStar(5, "yellow")
+  turtle.goto(eighteen_x, eighteen_y)
+  drawStar(5, "yellow")
+
+  #drow lines between polts
+  turtle.goto(one_x, one_y)
+  turtle.pendown()
+  turtle.goto(eight_x, eight_y)
+  turtle.goto(five_x, five_y)
+  turtle.goto(six_x, six_y)
+  turtle.goto(eighteen_x, eighteen_y)
+  turtle.goto(seventeen_x, seventeen_y)
+  turtle.goto(three_x, three_y)
+  turtle.penup()
+  turtle.goto(sixteen_x, sixteen_y)
+  turtle.pendown()
+  turtle.goto(six_x, six_y)
+  turtle.penup()
+  turtle.goto(four_x, four_y)
+  turtle.pendown()
+  turtle.goto(fourteen_x, fourteen_y)
+  turtle.goto(ten_x, ten_y)
+  turtle.goto(fifteen_x, fifteen_y)
+  turtle.goto(two_x, two_y)
+  turtle.penup()
+  turtle.goto(nine_x, nine_y)
+  turtle.pendown()
+  turtle.goto(twelve_x, twelve_y)
+  turtle.goto(ten_x, ten_y)
+  turtle.penup()
+  turtle.goto(eleven_x, eleven_y)
+  turtle.pendown()
+  turtle.goto(fifteen_x, fifteen_y)
+  turtle.goto(seven_x, seven_y)
+  turtle.goto(eighteen_x, eighteen_y)
+  turtle.goto(thirteen_x, thirteen_y)
+  turtle.penup()
+
+
+  turtle.speed(1000)
+  #draw 30 stars (random sizes/locations)
+  for star in range(30):
+ 	  moveToRandomLocation()
+ 	  drawStar( random.randint(5,25) , "White")
+  
+  turtle.speed(1000)
+  turtle.update()
+  #draw 10 small galaxies of 40 stars
+  for galaxy in range(10):
+    drawGalaxy(40)
+  sleep(x)
+
+main()
